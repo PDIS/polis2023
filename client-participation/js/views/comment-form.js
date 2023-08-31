@@ -58,7 +58,6 @@ module.exports = Handlebones.ModelView.extend({
     }
     ctx.charLimitString = Strings.tipCharLimit.replace("{{char_limit}}", constants.CHARACTER_LIMIT);
     ctx.is_anon = window.preload.firstConv.is_anon;
-    ctx.xid = window.preload.xid
     return ctx;
   },
   hideMessage: function(id) {

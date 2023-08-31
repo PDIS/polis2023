@@ -6631,7 +6631,11 @@ Email verified! You can close this tab or hit the back button.
   ) {
     const zid = req.p.zid;
     const tid = req.p.tid;
-    const firstTwoCharsOfLang = req.p.lang.substr(0, 2);
+    let lang = req.p.lang;
+    if (lang == "zh") {
+      lang = "zh-TW"
+    }
+    let firstTwoCharsOfLang = lang.substr(0, 2);
 
     getComment(zid, tid)
       //   Argument of type '(comment: {    txt: any;}) => globalThis.Promise<void>' is not assignable to parameter of type '(value: Row) => void | PromiseLike<void>'.
@@ -6648,7 +6652,7 @@ Email verified! You can close this tab or hit the back button.
             if (existingTranslations) {
               return existingTranslations;
             }
-            return translateAndStoreComment(zid, tid, comment.txt, req.p.lang);
+            return translateAndStoreComment(zid, tid, comment.txt, lang);
           })
           .then((rows: any) => {
             res.status(200).json(rows || []);
@@ -7542,6 +7546,9 @@ Email verified! You can close this tab or hit the back button.
     ).then((c: CommentType) => {
       if (lang && c) {
         const firstTwoCharsOfLang = lang.substr(0, 2);
+        if (firstTwoCharsOfLang == "zh") {
+          lang = 'zh-TW' // 強制 Google Cloud Translate API 使用正體中文
+        }
         return getCommentTranslations(zid, c.tid).then((translations: any) => {
           c.translations = translations;
           let hasMatch = _.some(translations, (t: { lang: string }) => {

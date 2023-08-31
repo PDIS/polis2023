@@ -784,7 +784,7 @@ function initializePolisHelpers() {
 
     const isHttps = req?.headers?.["x-forwarded-proto"] === "https";
 
-    if (!isHttps) {
+    if (false && !isHttps) {
       // assuming we're running on Heroku, where we're behind a proxy.
       res.writeHead(302, {
         Location: "https://" + req?.headers?.host + req.url,
@@ -4283,7 +4283,7 @@ Email verified! You can close this tab or hit the back button.
             let conv = a[1];
             let conversation_id = a[2];
 
-            let url = conv.parent_url || "https://pol.is/" + conversation_id;
+            let url = conv.parent_url || "https://polis.tw/" + conversation_id;
 
             let pid_to_ptpt = {};
             candidates.forEach((c: { pid: string | number }) => {

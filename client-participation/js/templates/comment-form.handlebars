@@ -24,6 +24,7 @@
     >
       {{!-- present all hints to screen reader --}}
 
+      {{#if xid}}
       {{#if hideHelp}}
         {{!-- even if help text is hidden, still screen read the main comment box label/prompt --}}
         <label for="comment_form_textarea"
@@ -46,6 +47,7 @@
         <label for="comment_form_textarea" style="display:block">
           {{{s.tipCommentsRandom}}}
         </label>
+      {{/if}}
       {{/if}}
 
       {{!-- end screen-reader-text --}}
@@ -111,6 +113,7 @@
     ">
 
     {{!-- ================ SOCIAL PICTURE && TEXT AREA ================ --}}
+    {{#if xid}}
     <div style="display: table; width: 100%" dir={{direction}}>
       {{#unless is_anon}}
       <span style="display: table-cell">
@@ -151,6 +154,12 @@
         </p> --}}
       </span>
     </div>
+    {{else}}
+    <div class="protip">
+     <p><i class="fa fa-microphone"></i> 如欲發表想法，邀請您至<a href="https://ideathon.tw/signin" target="_blank"> 2023 年點子松</a> 登入後進行投件，投件後即可於點子松內的 Polis 進行發表。</p>
+     <p><i class="fa fa-microphone"></i> If you wish to share your ideas, we invite you to log in to the <a href="https://ideathon.tw/signin" target="_blank">2023 Ideathon</a> and make a submission. After submission, you can then share your ideas on Polis.</p>
+    </div>
+    {{/if}}
 
     {{!-- ================ CONNECT FACEBOOK / TWITTER ================ --}}
     <div
@@ -159,7 +168,11 @@
         display: none;
         margin-top: 10px;
         ">
-      <div class="protip"><p><i class="fa fa-microphone"></i>&nbsp; {{s.connectToPostPrompt}}</p></div>
+      <!--<div class="protip"><p><i class="fa fa-microphone"></i>&nbsp; {{s.connectToPostPrompt}}</p></div>-->
+    <div class="protip">
+     <p><i class="fa fa-microphone"></i> 如欲發表想法，邀請您至<a href="https://ideathon.tw/signin" target="_blank"> 2023 年點子松活動</a>登入後進行投件，投件後即可於點子松內的 Polis 進行發表。</p>
+     <p><i class="fa fa-microphone"></i> If you wish to share your ideas, we invite you to log in to the <a href="https://ideathon.tw/signin" target="_blank">2023 Ideathon event</a> and make a submission. After submission, you can then share your ideas on Polis.</p>
+    </div>
       {{#if auth_opt_fb}}
       {{#unless hasFacebook}}
         <button id="facebookButtonCommentForm" class="facebookButton" style="padding-top: 0px;">
@@ -199,6 +212,7 @@
       ">
 
    {{!-- ================ CHARACTER COUNT && BUTTON ================ --}}
+   {{#if xid}}
    <div
     style="
       inset-inline-end: 0px;
@@ -331,6 +345,8 @@
             </span>
         </p>
       </div> {{! end SUBMIT BUTTON CLICKED RESPONSE AREA  column}}
+   {{/if}}
+   {{! end if xid}}
 
    {{!-- ================ END LOWER CONTAINER ================ --}}
     </div>

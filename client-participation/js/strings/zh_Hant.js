@@ -21,6 +21,10 @@ s.helpWhatAmISeeing = "立場相近的人，會自動歸類到同一個群組。
 s.helpWhatDoIDoTitle = " 我可以做什麼？";
 s.helpWhatDoIDo = "針對其他人的意見，按下「贊成」或「反對」。你也可以寫下您的觀點（每個意見單獨一則）。邀請朋友來一起討論！";
 s.writeCommentHelpText = "如果您的觀點沒有人寫過，請務必將它<strong>寫下來</strong>！</i>";
+s.helpWriteListIntro = "如何寫一個好的陳述？";
+s.helpWriteListStandalone = "獨立且完整的想法";
+s.helpWriteListRaisNew = "提出新的觀點、經驗或議題";
+s.helpWriteListShort = "清晰且簡明扼要（限制在 140 個字內）";
 s.heresHowGroupVoted = "這是群組 {{GROUP_NUMBER}} 的看法：";
 s.one_person = "{{x}} 人";
 s.x_people = "{{x}} 人";
@@ -49,6 +53,7 @@ s.submitComment = "送出";
 s.tipStarred = "已經標記為重點。";
 s.participantHelpWelcomeText = "歡迎來到一種嶄新的討論方式 - 對眾人的意見<span style='font-weight: 700;'>投票</span>，並且<span style='font-weight: 700;'>貢獻</span>您的觀點。";
 s.participantHelpGroupsText = "立場相近的人，會<span style='font-weight: 700;'>自動歸類到同一個群組。</span>點擊群組，就可以看到這些人的共同意見<a style='font-weight: 700; cursor: pointer; text-decoration: underline' id='helpTextGroupsExpand'>...</a>";
+s.participantHelpGroupsNotYetText = "只有在有 7 位不同參與者開始投票後，視覺分析模型才會出現。";
 s.helpWhatAreGroupsDetail = "<p>您可能在其他網站上看過「推薦產品」或「推薦電影」的服務。這些服務使用統計資訊，找出和您品味相近的人，然後用那些人的紀錄來向您推薦。</p> <p>當您在這裡按下「贊成」或「反對」時，您就會自動將您的頭像移動到相近的群組裡！上方顯示的每個群組，都是由立場相近的人組成的。這樣的公開討論，每次都能展現出令人意外的洞見。請點擊一個群組 - 看看他們共同的意見、發現某個群組的獨特之處！";
 s.socialConnectPrompt = "連結帳號，就可以看到您的朋友、追蹤的人的立場如何。";
 s.connectFbButton = "與 Facebook 連結";
@@ -57,6 +62,8 @@ s.connectTwButton = "與 Twitter 連結";
 s.showTranslationButton = "啟用外部翻譯";
 s.hideTranslationButton = "停用外部翻譯";
 s.thirdPartyTranslationDisclaimer = "翻譯服務由第三方提供";
+s.noCommentsYouVotedOnAll = "您已對所有的意見完成投票。";
+s.notificationsEnterEmail = "輸入您的 Email，當有新的意見可以投票時，我們會寄信通知您：";
 s.ideathonTitle = "歡迎分享您對生成式 AI 的應用倫理看法與創作心得"
 s.ideathonDescription = `
 <article>

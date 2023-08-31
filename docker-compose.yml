@@ -52,6 +52,8 @@ services:
       context: ./math
       labels:
         polis_tag: ${TAG:-dev}
+    volumes:
+      - ./math/exports:/app/exports
     environment:
       - DATABASE_URL=${DATABASE_URL:?error}
       - MATH_ENV=${MATH_ENV:-prod}

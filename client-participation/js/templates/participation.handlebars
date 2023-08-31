@@ -166,15 +166,17 @@
     </div>
     --}}
 
-    {{#unless no_topic}}
-    {{#ifDefined topic}}
       <h2
         class="HeadingA"
         style="
          margin-bottom: 10px;
         "
         dir="auto">
-        {{topic}}
+        {{#if isIdeathon2023}}
+          {{s.ideathonTitle}}
+        {{else}}
+          {{topic}}
+        {{/if}}
         {{#unless is_active}}
         <span class="no_you_vote" style="
          color: white;
@@ -190,11 +192,7 @@
         ">closed</span>
       {{/unless}}
       </h2>
-    {{/ifDefined}}
-    {{/unless}}
 
-    {{#unless no_description}}
-    {{#ifDefined description}}
         <p
           style="
             border-inline-start: 4px solid #2980b9;
@@ -203,10 +201,12 @@
             word-wrap:break-word;
           "
           dir="auto">
-          {{{description}}}
+          {{#if isIdeathon2023}}
+            {{{s.ideathonDescription}}}
+          {{else}}
+            {{{description}}}
+          {{/if}}
         </p>
-    {{/ifDefined}}
-    {{/unless}}
 
     {{#if link_url}}
         <p
